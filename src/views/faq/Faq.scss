@@ -1,0 +1,115 @@
+@import "src/assets/references/index";
+
+.main-faq-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  ;
+
+    .content-faq-div {
+        width: 100%;
+        max-width: $max-width-container;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+
+        .main-contact-us {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            .title-logo-div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .title {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-transform: uppercase;
+                    @include text-style("Arsilon", normal, 500, #e85353);
+                    @include responsive(font-size, 32px, 32px, 20px, 20px);
+                    text-align: center;
+                    .line {
+                        width: 100%;
+                        height: 2px;
+                        background-color: #e85353;
+                    @include responsive(display, flex, flex, none, none);
+
+                    }
+                }
+                .logo {
+                    margin-top: 10px;
+                    max-width: 200px;
+                    @include responsive(width, 100%, 100%, 70%, 70%);
+                }
+            }
+            .description {
+                text-align: center;
+                padding: 40px 20px;
+                @include text-style($font-family, normal, 400, $white);
+                @include responsive(font-size, 24px, 24px, 16px, 16px);
+            }
+
+            .question-answer-div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 20px;
+                @include responsive(padding, 0 40px, 0 40px, 0 10px, 0 10px);
+                .box-rotate {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 16px;
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(5px);
+                    -webkit-backdrop-filter: blur(5px);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                }
+                .box-question-answer-div {
+                    width: 100%;
+                    max-width: 1200px;
+                    border-radius: 4px;
+                    border: 1px solid $white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    @include responsive(min-height, 60px, 60px, 40px, 40px);
+                    @include responsive(padding, 16px 24px 24px 24px, 16px 24px 24px 24px, 10px, 10px);
+                    .question-div {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        span {
+                            @include text-style($font-family, normal, 400, $white);
+                            @include responsive(font-size, 22px, 22px, 16px, 16px);
+                        }
+                        .text-expanded {
+                            @include text-style($font-family, normal, 700, #e85353);
+                            @include responsive(font-size, 24px, 24px, 18px, 18px);
+                        }
+                        img {
+                            @include responsive(width, 20px, 20px, 10px, 10px);
+                            @include responsive(height, 20px, 20px, 10px, 10px);
+                            transition: 0.5s;
+                        }
+                        .rotate {
+                            transform: rotateZ(180deg);
+                        }
+                    }
+                    .answer {
+                        width: 90%;
+                        @include text-style($font-family, normal, 400, $white);
+                        @include responsive(font-size, 22px, 22px, 14px, 14px);
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

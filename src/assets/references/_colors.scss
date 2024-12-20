@@ -1,0 +1,54 @@
+@use "sass:selector";
+
+//Global Variables
+$main-font-family: "Montserrat";
+$max-width-container: 1400px;
+$container-padding-desktop: 0 36px;
+$container-padding-mobile: 0 16px;
+
+//Global Colors - Forms
+$white: #fff;
+$black: #000;
+$accent-color: #303031;
+
+
+
+
+//Fonts
+$main-font-family: "Montserrat";
+
+$font-family: $main-font-family;
+$components-border-radius: 6px;
+$html-default-font-size: 16px;
+$golden-ratio: 1.6180339887498948482;
+//Global Functions
+@function stripUnit($value) {
+    @return $value;
+}
+
+@function rem($pxValue) {
+    $rem-value: calc(stripUnit($pxValue) / stripUnit($html-default-font-size));
+    @return #{$rem-value}rem;
+}
+
+@function golden-ratio-padding($base-value) {
+    $smaller-value: calc($base-value / $golden-ratio);
+    $larger-value: $base-value * $golden-ratio;
+
+    @return round($smaller-value) + px round($larger-value) + px;
+}
+@function golden-ratio-line-height($font-size) {
+    // Calculate the line height
+    $line-height: round($font-size * $golden-ratio);
+
+    @return $line-height + px;
+}
+@function golden-ratio-scale($base-size, $steps) {
+    $sizes: ();
+
+    @for $i from 1 through $steps {
+        $sizes: round(append($sizes, $base-size * pow($golden-ratio, $i - 1)));
+    }
+
+    @return $sizes;
+}

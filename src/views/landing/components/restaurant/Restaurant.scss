@@ -1,0 +1,54 @@
+@import "src/assets/references/index";
+
+.restaurant-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 50px;
+    width: 100%;
+
+    .restaurant-title {
+        text-decoration: underline;
+        @include text-style($main-font-family, normal, 700, $white);
+        @include responsive(font-size, 56px, 56px, 42px, 32px);
+    }
+
+    .restaurant-main-img-desc-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .restaurant-main-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            @include responsive(height, 600px, 350px, 350px, 300px);
+
+            .restaurant-main-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .welcome-desc {
+            padding: 20px;
+            text-align: center;
+            @include text-style($main-font-family, normal, 700, $white);
+            @include responsive(font-size, 32px, 30px, 24px, 18px);
+        }
+
+        .restaurant-main-desc {
+            padding: 20px;
+            text-align: center;
+            @include responsive(width, 90%, 90%, 100%, 100%);
+            @include text-style($main-font-family, normal, 400, $white);
+            @include responsive(font-size, 20px, 20px, 18px, 16px);
+        }
+    }
+}

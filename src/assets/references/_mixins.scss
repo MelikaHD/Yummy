@@ -1,0 +1,155 @@
+@mixin main-size-xs {
+    @media (max-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-sm {
+    @media (min-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-md {
+    @media (min-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-lg {
+    @media (min-width: 991.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-xl {
+    @media (min-width: 1199.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-pre-xs {
+    @media (max-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-pre-sm {
+    @media (max-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-pre-md {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-pre-lg {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+
+@mixin main-size-pre-xl {
+    @media (max-width: 1199.98px) {
+        @content;
+    }
+}
+
+@mixin responsive-size($property, $desktop-value, $laptop-value, $tablet-value, $mobile-value) {
+    @include main-size-xs {
+        // 576 - 320
+        #{$property}: $mobile-value;
+    }
+
+    @include main-size-sm {
+        // 768 - 576
+
+        #{$property}: $tablet-value;
+    }
+    @include main-size-md {
+        //1200 - 768
+
+        #{$property}: $laptop-value;
+    }
+    @include main-size-xl {
+        //higher than 1200
+        #{$property}: $desktop-value;
+    }
+}
+
+@mixin modified-responsive-size($property, $desktop-value, $tablet-value, $mobile-value) {
+    @include main-size-xs {
+        // 576 - 320
+        #{$property}: $mobile-value;
+    }
+
+    @include main-size-sm {
+        // 768 - 576
+
+        #{$property}: $tablet-value;
+    }
+    @include main-size-md {
+        //992 - 768
+
+        #{$property}: $laptop-value;
+    }
+    @include main-size-lg {
+        //higher than 992
+        #{$property}: $desktop-value;
+    }
+}
+
+
+
+
+
+//new sizes used in the mixin
+@mixin mobile-xs {
+    @media (max-width:319.98px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (min-width:319.98px) {
+        @content;
+    }
+}
+@mixin mini-desktop-including-tablet {
+    @media (min-width: 767.98px) {
+        @content;
+    }
+}
+@mixin larger-desktop {
+    @media (min-width: 1199.98px) {
+        @content;
+    }
+}
+
+
+//new mixin for responsiveness
+@mixin responsive($property, $larger-desktop-value, $mini-desktop-including-tablet-value, $mobile-value , $mobile-xs-value) {
+    @include mobile-xs {
+        #{$property}: $mobile-xs-value;
+    }
+    @include mobile {
+        #{$property}: $mobile-value;
+    }
+    @include mini-desktop-including-tablet {
+        #{$property}: $mini-desktop-including-tablet-value;
+    }
+    @include larger-desktop {
+        #{$property}: $larger-desktop-value;
+    }
+}
+
+// text styling mixin  
+@mixin text-style($font-family, $font-style, $font-weight, $color) {
+    font-family: $font-family;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    color: $color;
+    transition: 0.5s;
+}

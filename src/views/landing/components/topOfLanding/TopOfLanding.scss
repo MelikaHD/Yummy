@@ -1,0 +1,25 @@
+@import "src/assets/references/index";
+
+.top-of-landing-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include responsive(margin-top, 60px, 60px, 70px, 70px);
+
+    .top-of-landing-img {
+        width: 100%;
+        object-fit: cover;
+        @include responsive(max-height, 720px, unset, unset, unset);
+    }
+
+    .title-main{
+        text-align: center;
+        position: absolute;
+        @include text-style($font-family, normal, 700, $white);
+        width: 80%;
+        text-shadow: 4px 4px 6px black;
+        @include responsive(font-size, 64px, 60px, 28px, 16px);
+        @include responsive(transform, translate(10px, -90px), translate(10px, -90px),translate(10px, -50px), 16px);
+    }
+}

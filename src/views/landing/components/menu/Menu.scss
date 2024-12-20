@@ -1,0 +1,59 @@
+@import "src/assets/references/index";
+
+.menu-part-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include responsive(padding, 20px, 20px, 26px, 26px);
+    @include responsive(row-gap, 85px, 80px, 26px, 26px);
+
+    .menu-title {
+        text-decoration: underline;
+        @include text-style($main-font-family, normal, 700, $white);
+        @include responsive(font-size, 56px, 56px, 42px, 32px);
+    }
+
+    .menu-cards-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+
+        .menu-card {
+            display: flex;
+            border-radius: 10px;
+            flex-direction: column;
+            background-color:#1b1b1b;
+            box-shadow:rgba(255, 255, 255, 0.278431) 5px 7px 12px 0px;
+            @include responsive(width, 40%, 40%, unset, 100%);
+
+            .link {
+                display: flex;
+                flex-direction: column;
+
+                .menu-card-img {
+                    width: 100%;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    object-fit: cover;
+                    @include responsive(height, 400px, 350px, 350px, 300px);
+                }
+
+                .menu-card-title {
+                    padding: 14px;
+                    text-align: center;
+                    @include text-style($main-font-family, normal, 700, $white);
+                    @include responsive(font-size, 20px, 20px, 18px, 16px);
+                }
+            }
+        }
+
+        .menu-card:hover {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    }
+}

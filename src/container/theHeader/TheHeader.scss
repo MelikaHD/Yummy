@@ -1,0 +1,80 @@
+@import "src/assets/references/index";
+
+.main-header-div {
+    width: 100%;
+    // max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: $black;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    @include responsive(height, 70px, 70px, 70px, 70px);
+
+    .container-header {
+        width: 10%;
+        max-width: 1400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: unset;
+
+        .logo-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            left: 20px;
+
+            .logo {
+                text-align: center;
+                @include text-style($main-font-family, normal, 700, $white);
+                @include responsive(font-size, 24px, 24px, 20px, 18px);
+            }
+        }
+
+        .menu-item-div {
+            display: flex;
+            align-items: center;
+            margin-left: -28px;
+            @include responsive(display, flex, flex, none, none);
+            @include responsive(column-gap, 20px, 8px, unset, unset);
+
+            .item {
+                white-space: nowrap;
+                @include responsive(font-size, 16px, 14px, 12px, 12px);
+                & {
+                    @include text-style($main-font-family, normal, 600, $white);
+                }
+            }
+
+            .vline {
+                width: 1px;
+                height: 22px;
+                background-color: $white;
+            }
+
+            .vline:last-child {
+                display: none;
+            }
+        }
+
+        .burger-book {
+            display: flex;
+            right: 20px;
+            column-gap: 10px;
+            position: absolute;
+
+
+            .burger-menu {
+                cursor: pointer;
+                filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(106%) contrast(106%);
+                @include responsive(display, none, none, flex, flex);
+                @include responsive(width, 0px, 0px, 28px, 26px);
+            }
+        }
+    }
+}

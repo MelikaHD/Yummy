@@ -1,0 +1,64 @@
+@import "src/assets/references/index";
+
+.burger-menu-container {
+  border-radius: 8px;
+  position: fixed;
+  z-index: 2000;
+  top: 0px;
+  padding: 10px 10px 20px 10px;
+  row-gap: 20px;
+  background: rgba(82, 82, 82, 0.54);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(82, 82, 82, 0.3);
+  @include responsive(display, none, none, flex, flex);
+  @include responsive(overflow, unset, unset, auto, auto);
+  @include responsive(width, 0px, 0px, 200px, 200px);
+  @include responsive(transform, unset, unset, translate(-170px, 60px), translate(-170px, 60px));
+  & {
+    flex-direction: column;
+  }
+
+  .top-part {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .burger-book {
+      display: flex;
+      column-gap: 10px;
+
+      .burger-menu {
+        cursor: pointer;
+        filter: invert(100%) sepia(94%) saturate(0%) hue-rotate(194deg) brightness(106%) contrast(106%);
+        @include responsive(display, none, none, flex, flex);
+        @include responsive(width, 0px, 0px, 20px, 20px);
+        @include responsive(height, 0px, 0px, 20px, 20px);
+      }
+    }
+  }
+
+  .bm-items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .item-style {
+      z-index: 3000;
+      text-align: center;
+      @include text-style($font-family, bold, 600, $white);
+      @include responsive(font-size, 0, 0, 16px, 14px);
+      @include responsive(line-height, 0px, 0px, 26px, 24px);
+    }
+
+    .vline {
+      width: 100%;
+      height: 1px;
+    }
+
+    .vline:last-child {
+      display: none;
+    }
+  }
+}
